@@ -5,10 +5,10 @@ The DNN-ROM code can be used for construction of reduced order models, ROMs, of 
 Your system will need the following packages to run the code:
 1. Gfortran compiler
 2. Python 3.6, including these modules
-  - Numpy
-  - Matplotlib
-  - Scipy
-  - Scikit-optimize
+    - Numpy
+    - Matplotlib
+    - Scipy
+    - Scikit-optimize
 3. Tensorflow 
 4. CGNS 
 5. Surrogate modeling toolbox (SMT) 
