@@ -14,7 +14,7 @@ Your system will need the following packages to run the code:
 5. Surrogate modeling toolbox (SMT) 
 
 # Installation 
-Install the required packages and then clone the repository from github
+Install the required packages and then clone the repository from github.
 
 # Example usage - Compressible flow past a cylinder
 
