@@ -9,9 +9,9 @@ Your system will need the following packages to run the code:
     - Matplotlib
     - Scipy
     - Scikit-optimize
+    - Surrogate modeling toolbox (SMT) 
 3. Tensorflow 
 4. CGNS 
-5. Surrogate modeling toolbox (SMT) 
 
 # Installation 
 Install the required packages and then clone the repository from github.
