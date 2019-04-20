@@ -90,7 +90,6 @@ if (opt == 2):
   from init_params import init_params
   from forward_propagation import forward_propagation
   from compute_cost import compute_cost
-  from l2_reg import l2_reg
   from rk45 import RK45
   import scipy.io as sio
   import os
@@ -107,7 +106,7 @@ if (opt == 2):
 
   dimensions = [dim_num_layers,dim_num_nodes,dim_lambd]
 
-  default_parameters = [12, 10, 1e-4] # Initial guesss
+  default_parameters = [n_layers_min, n_hidden_min, 10**(-random.uniform(lambd_min,lambd_max))] # Initial guesss
 
   def model(X_train,Y_train,layers_dims,learning_rate,num_iter,lambd,print_cost):
       
@@ -124,9 +123,6 @@ if (opt == 2):
         ### Initialize Parameters ###
         parameters = init_params(layers_dims)
         
-        ### Compute Regularization term ###
-        reg = l2_reg(parameters,n_hidden_layers)
-          
         ### Foward propagation - Build the forward propagation in the tensorflow graph ###
         ZL = forward_propagation(X,parameters)
         
@@ -159,7 +155,6 @@ if (opt == 2):
                     costs.append(cost_value)
             # Save the parameters in a variable
             parameters = sess.run(parameters)
-            reg = sess.run(reg)
 
       return parameters, costs
   
@@ -170,7 +165,6 @@ if (opt == 2):
   def dl_sindy_bayesian(num_layers,num_nodes,lambd):
 
       global num_model 
-      num_model = num_model + 1
       
       ### Load data ###
       with open('./data/V_matrix.dat') as V:
@@ -210,29 +204,29 @@ if (opt == 2):
       ## Plot Graphs ###
       os.system('mkdir -p ./results/figs/model_' + str(num_model) + '/')
       
-      # Plot figures #  
-      for i in range(n_var):    
-          fig, ax = plt.subplots()
-          ax.plot(t.T,np.expand_dims(X_train[i,:], axis = 0).T,'r--',label='Original',linewidth=1.0)
-          ax.plot(t_s.T,np.expand_dims(X_s[i,:], axis = 0).T,'k',label='Prediction',linewidth=0.5)
-          plt.xlabel('Time (s)')
-          plt.ylabel('a' + str(i+1))
-          plt.title('Modo temporal ' + str(i+1))
-          ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-          fig.tight_layout()
-          fig.subplots_adjust(right=0.8) 
-          #plt.show()
-          plt.savefig('./results/figs/model_' + str(num_model) + '/a' + str(i+1) +'.png',dpi=600)
-          plt.close()
+      # # Plot figures #  
+      # for i in range(n_var):    
+      #     fig, ax = plt.subplots()
+      #     ax.plot(t.T,np.expand_dims(X_train[i,:], axis = 0).T,'r--',label='Original',linewidth=1.0)
+      #     ax.plot(t_s.T,np.expand_dims(X_s[i,:], axis = 0).T,'k',label='Prediction',linewidth=0.5)
+      #     plt.xlabel('Time (s)')
+      #     plt.ylabel('a' + str(i+1))
+      #     plt.title('Modo temporal ' + str(i+1))
+      #     ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+      #     fig.tight_layout()
+      #     fig.subplots_adjust(right=0.8) 
+      #     #plt.show()
+      #     plt.savefig('./results/figs/model_' + str(num_model) + '/a' + str(i+1) +'.png',dpi=600)
+      #     plt.close()
       
-      # plot the cost
-      plt.figure()
-      plt.semilogy(np.squeeze(costs))
-      plt.ylabel('Cost Value')
-      plt.xlabel('iterations (x1000)')
-      plt.title("Learning rate =" + str(learning_rate))
-      plt.savefig('./results/cost_function/cost_function_' + str(num_model) + '.png',dpi=600)
-      plt.close()
+      # # plot the cost
+      # plt.figure()
+      # plt.semilogy(np.squeeze(costs))
+      # plt.ylabel('Cost Value')
+      # plt.xlabel('iterations (x1000)')
+      # plt.title("Learning rate =" + str(learning_rate))
+      # plt.savefig('./results/cost_function/cost_function_' + str(num_model) + '.png',dpi=600)
+      # plt.close()
 
       ## Save cost values in .dat ###s
       scipy.savetxt('./results/cost_function/cost_function_' +  str(num_model) + '.dat', costs, fmt='%25.18e' )
@@ -260,6 +254,8 @@ if (opt == 2):
         file.close()
         error_best = error_train
       
+      num_model = num_model + 1
+
       return error_train
 
   ### Bayesian Optimization ###

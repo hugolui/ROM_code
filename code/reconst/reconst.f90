@@ -21,13 +21,12 @@ PROGRAM reconst
 
   !!! Write the best flow Reconstruction in CGNS file!!!
   if (CGNSFlag) then
+    write(*,*) ' Reconstructing the best candidate model ...'
     call reconst_flow_ROM_CGNS(nmodes,nsnap_reconst)
     stop
   end if
 
-  !!! Find the best modes !!!
-  ! Read validation data !
-  
+  !!! Read validation data !!!!
   if (soln_files .eq. 1) then
     call read_soln
   end if
@@ -36,12 +35,11 @@ PROGRAM reconst
     call read_soln_multi
   end if
 
-  ! Reconstruction the flowfield for a determined model
+  ! Reconstruction the flowfield for a determined candidate model
   call reconst_best_models(nmodes,nsnap_reconst,model)
 
   ! Compute the difference between Validation data and ROM solution
   call diff_FOM_ROM
-
 
 END PROGRAM reconst
 
@@ -581,6 +579,8 @@ subroutine reconst_best_models(nOutModes,nsnap_S,num_model)
   real(kind=8), allocatable    :: temporal_modes_model(:,:)
   character(len=500) :: char
 
+  write(*,*) ' Reconstructing the Flowfield ...'
+
   !!! Read temporal modes (Reconstruction) !!!
   allocate(temporal_modes_model(nsnap_S,nOutModes))
   write(char,'(A,A)')  '.'//trim(filename)
@@ -673,11 +673,12 @@ subroutine diff_FOM_ROM
   use mod_field
   use mod_pod_modes
   
-
   implicit none
   real(kind=8), allocatable :: diff_p(:,:,:,:)
   real(kind=8) :: diff, L1_error
   integer(kind=4) :: m
+
+  write(*,*) 'Computing ||p_FOM - p_ROM || ...'
 
   L1_error = 0.0d0
   do m = 1,nzones

@@ -1,13 +1,13 @@
-/media/dados_hugo/cylinder_mach_04/output/                                               ! Path to solution files
+/home/cfd/Desktop/hugo/cylinder_data/                                                    ! Path to solution files
 2                                                                                        ! 1 - CGNS soln in a single file; 2 - CGNS soln in multiples files
-/media/dados_hugo/hugo/DNN_ROM/code/                                                     ! Origin folder
+/home/cfd/Desktop/hugo/ROM_code/code/                                                    ! Origin folder
 qout                                                                                     ! Name of solution files
 POD_modes.cgns                                                                           ! Name of cgns file with POD modes
 rebuiltSol.cgns                                                                          ! Name of cgns file with reconstructed solution
 T                                                                                        ! Calculate correlation matrix (T/F)
 T                                                                                        ! Calculate SVD (T/F)
 28602 29722 4                                                                            ! From file; to file; skip - (Training data)
-29726 30846 4                                                                            ! From file; to file; skip - (Validation data)
+29726 30306 4                                                                            ! From file; to file; skip - (Validation data)
 F                                                                                        ! Use primitive variables (T/F)
 675                                                                                      ! Number of points in j-th direction  
 1   421                                                                                  ! Range of points in i-th direction
@@ -22,7 +22,7 @@ P                                                                               
 0.05                                                                                     ! Time step between snapshots (Remember the skip value in line 9)
 
 *DNN INPUTS*
-10                                                                                       ! Number of candidate models                                                         
+15                                                                                       ! Number of candidate models                                                    
 6                                                                                        ! Minimum number of layers  
 10                                                                                       ! Maximum number of layers
 10                                                                                       ! Minimum number of hidden units per layers
@@ -32,5 +32,5 @@ P                                                                               
 0.001                                                                                    ! Learning rate
 10001                                                                                    ! Number of iterations
 1120                                                                                     ! Number of snapshots for reconstruction
-5                                                                                        ! Number of best models to be evaluated (Only temporal modes)
-1                                                                                        ! Hyperparameter optimization: 1 - Random search;  2 - Bayesian Optimization
+5                                                                                        ! Number of best candidate models to be evaluated (Only temporal modes)
+1                                                                                        ! Hyperparameter optimization: 1 - Random search; 2 - Bayesian Optimization; 3 - Latin Hypercube
