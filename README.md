@@ -30,8 +30,9 @@ In the folder "code", we have a file called "inputs.inp". In this file, we speci
     - In line 3, we specify the path to the folder "code". For example: /home/cfd/Desktop/hugo/ROM_code/code/
     
 ## 3 - Run the code    
-
-    Now, we can run the code by open a terminal in the folder "code" and typing sh run.sh. 
+Now, we can run the code by open a terminal in the folder "code" and typing 
+      
+    sh run.sh 
 
 The output file is a CGNS file containing the ROM solution for a determined number of snapshots (listed in the inputs.inp file). For all candidate models evaluated, the DNN parameters and hyperparameters can be found in the folder "line3/regression/deep_learning/results/". 
 
