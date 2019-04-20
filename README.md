@@ -20,7 +20,7 @@ Install the required packages and then clone the repository from github.
 
 In this example, the full order model (FOM) is obtained by solving the compressible Navier Stokes equations as detailed in (https://arxiv.org/abs/1903.05206: section 4.2). The numerical simulations are conducted for Reynolds and Mach numbers Re = 150 and M = 0.4, respectively. The grid configuration consists of a body-fitted O-grid with 421 × 751 points in the streamwise and wall-normal directions, respectively. The training data comprises the first 280 snapshots of the FOM, and the validation data contains the next 145 snapshots. 
 
-We are gonna build a reduced order model capable to predict the flowfield beyond the training. The final form of the ROM is an ordinary differential equation (ODE) system.
+We are going to build a reduced order model capable to predict the flowfield beyond the training. The final form of the ROM is an ordinary differential equation (ODE) system.
 
 ## 1 - Download the cylinder data
 First, we need to download the cylinder data: 
