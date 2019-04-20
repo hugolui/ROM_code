@@ -4,7 +4,6 @@ import random
 import scipy
 from system_identification import system_identification
 import os
-from smt.sampling_methods import LHS
 
 #start_time = time.time() # Start timer
 
@@ -132,7 +131,7 @@ if (opt == 2):
         ZL = forward_propagation(X,parameters)
         
         ### Cost - Add cost function to tensorflow graph ###
-        cost_function = compute_cost(ZL,Y,parameters,n_hidden_layers,lambd,reg,m)
+        cost_function = compute_cost(ZL,Y,parameters,n_hidden_layers,lambd,m)
         
         ### Backpropagation - Define the tensorflow optimizer ###
         optimizer = tf.train.AdamOptimizer(learning_rate = learning_rate).minimize(cost_function)
@@ -279,6 +278,8 @@ if (opt == 2):
 
 ### LATIN HYPERCUBE SAMPLING ###
 if (opt == 3):
+
+  from smt.sampling_methods import LHS
 
   lambd = np.array([10**-(lambd_min),10**-(lambd_max)])
   num_layers = np.array([n_layers_min,n_layers_max])

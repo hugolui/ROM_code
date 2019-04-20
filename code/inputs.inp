@@ -33,4 +33,4 @@ P                                                                               
 10001                                                                                    ! Number of iterations
 1120                                                                                     ! Number of snapshots for reconstruction
 5                                                                                        ! Number of best models to be evaluated (Only temporal modes)
-1                                                                                        ! Hyperparameter optimization: 1 - Random search;  2- Bayesian Optimization
+1                                                                                        ! Hyperparameter optimization: 1 - Random search;  2 - Bayesian Optimization
