@@ -18,6 +18,7 @@ module mod_field
   character(len=stringLen) :: soln ! Name of solution files
   character(len=stringLen) :: outfile ! Name of cgns file with POD modes
   character(len=stringLen) :: outfile2 ! Name of cgns file with reconstructed solution
+  character(len=stringLen) :: filename ! Name of the temporal mode file
   
   integer(kind=4)  :: idxi      ! index initial (Training data)
   integer(kind=4)  :: idxf      ! index final (Training data)
@@ -30,12 +31,14 @@ module mod_field
   integer(kind=4)  :: nzones, jmaxInput ! Number of zones and Number of points in j-th direction
   integer(kind=4)  :: der ! Derivative order
   integer(kind=4)  :: soln_files ! CGNS soln in a single file or CGNS soln in multiples files
+  integer(kind=4)  :: model      ! Candidate model
   
   
   logical            :: logical_primitive ! Use primitive variables (T/F)
   logical            :: corrFlag, svdFlag ! Calculate correlation matrix (T/F) and Calculate SVD (T/F)
   logical            :: CGNSFlag ! Write CGNS file (T/F)
 
+  real(kind=8) :: dt ! Time step
   real(kind=8), allocatable     :: time(:) ! Time array
   integer(kind=4), allocatable, dimension(:) :: jmax ! Number of points in the j-th direction of each zone
   integer(kind=4), allocatable, dimension(:) :: kmax ! Number of points in the k-th direction of each zone

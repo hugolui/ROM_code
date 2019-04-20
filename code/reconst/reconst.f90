@@ -57,8 +57,6 @@ subroutine read_inputs()
     integer            :: POD_scheme
     character(len=4)   :: char
 
-    additionalCorrelationFlag = .FALSE.
-
     open(fileUnit, file='inputs_reconst.inp')
     read(fileUnit,'(A)') path_to_soln
     read(fileUnit,*)     soln
