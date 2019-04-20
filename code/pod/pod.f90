@@ -881,6 +881,9 @@ subroutine move_files()
   write(temp,"(A)") 'cp -rf inputs.inp ' // trim(path_to_ROM) // 'regression/deep_learning/data/'
   call system (temp)
 
+  write(temp,"(A)") 'cp -rf modfile.f90 ' // trim(path_to_ROM) // 'reconst/'
+  call system (temp)
+
 end subroutine
 
 !################################################################################################

@@ -25,7 +25,8 @@ module mod_field
   integer(kind=4)  :: idxi_val      ! index initial (Validation data)
   integer(kind=4)  :: idxf_val      ! index final (Validation data)
   integer(kind=4)  :: idxr_val      ! index rate (Validation data)
-  integer(kind=4)  :: nsnap     ! Number of snapshots
+  integer(kind=4)  :: nsnap     ! Number of snapshots (Training data)
+  integer(kind=4)  :: nsnap_val ! Number of snapshots (validation data)
   integer(kind=4)  :: nzones, jmaxInput ! Number of zones and Number of points in j-th direction
   integer(kind=4)  :: der ! Derivative order
   integer(kind=4)  :: soln_files ! CGNS soln in a single file or CGNS soln in multiples files
@@ -33,18 +34,33 @@ module mod_field
   
   logical            :: logical_primitive ! Use primitive variables (T/F)
   logical            :: corrFlag, svdFlag ! Calculate correlation matrix (T/F) and Calculate SVD (T/F)
-  
+  logical            :: CGNSFlag ! Write CGNS file (T/F)
+
   real(kind=8), allocatable     :: time(:) ! Time array
   integer(kind=4), allocatable, dimension(:) :: jmax ! Number of points in the j-th direction of each zone
   integer(kind=4), allocatable, dimension(:) :: kmax ! Number of points in the k-th direction of each zone
   integer(kind=4) :: imax, imin ! Range of points in i-th direction
   type pinto
 
-    real(kind=8), allocatable, dimension(:,:,:,:) :: r ! Density
-    real(kind=8), allocatable, dimension(:,:,:,:) :: u ! X-momentum
-    real(kind=8), allocatable, dimension(:,:,:,:) :: v ! Y-momentum
-    real(kind=8), allocatable, dimension(:,:,:,:) :: w ! Z-momentum
-    real(kind=8), allocatable, dimension(:,:,:,:) :: p ! Pressure
+    real(kind=8), allocatable, dimension(:,:,:,:) :: r ! Density (Training data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: u ! X-momentum (Training data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: v ! Y-momentum (Training data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: w ! Z-momentum (Training data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: p ! Pressure (Training data)
+
+    real(kind=8), allocatable, dimension(:,:,:,:) :: r_val ! Density (Validation data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: u_val ! X-momentum (Validation data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: v_val ! Y-momentum (Validation data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: w_val ! Z-momentum (Validation data)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: p_val ! Pressure (Validation data)
+
+    real(kind=8), allocatable, dimension(:,:,:,:) :: r_reconst ! Density (Reconstruction)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: u_reconst ! X-momentum (Reconstruction)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: v_reconst ! Y-momentum (Reconstruction)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: w_reconst ! Z-momentum (Reconstruction)
+    real(kind=8), allocatable, dimension(:,:,:,:) :: p_reconst ! Pressure (Reconstruction)
+
+    real(kind=8), allocatable, dimension(:,:,:,:) :: diff_p ! Difference between p_val and p_reconst
 
     real(kind=8), allocatable, dimension(:,:,:) :: x, y, z ! Grid points
     
@@ -97,14 +113,14 @@ module mod_pod_modes
   integer(kind=4) nmodes ! Number of POD modes
 
   real(kind=VRL), allocatable :: lambda(:) ! Eigenvalues of the correlation matrix
-  real(kind=VRL), allocatable :: temporal_modes(:,:) ! Temporal modes
+  real(kind=VRL), allocatable :: temporal_modes(:,:) ! Temporal modes (Training data)
 
+  real(kind=8), allocatable , dimension(:,:) :: modos_temporais ! Temporal modes (Reconstruction)
+  integer(kind=4) :: nsnap_reconst ! Number of snanpshots (Reconstruction)
   type pod_zones
     real(kind=VRL), allocatable :: spatial_modes(:,:,:,:,:) ! Spatial modes
   end type pod_zones
   type(pod_zones), allocatable :: pod_zone(:) ! Zone array
   
-  !character(len=250) :: path_to_output_matrix
-
 end module
 !#####################################################################################
