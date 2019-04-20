@@ -21,8 +21,8 @@ Install the required packages and then clone the repository from github.
 First, we need to download the cylinder data: https://www.dropbox.com/sh/ji6i5u8valqyda8/AABtEYaZ7vG-62q6h4toQKBTa?dl=0. 
 
 In the folder "code", we have a file called "inputs.inp". In this file, we specify the information required to construct the reduced order model. There are comments explaining the inputs list. In order to run this example, we just need to modify lines 1 and 3.
-    - In line 1, we specify the path to the cylinder data. For example: /home/cfd/Desktop/hugo/cylinder_data/
-    - In line 3, we specify the path to the folder "code". For example: /home/cfd/Desktop/hugo/ROM_code/code/
+        - In line 1, we specify the path to the cylinder data. For example: /home/cfd/Desktop/hugo/cylinder_data/
+        - In line 3, we specify the path to the folder "code". For example: /home/cfd/Desktop/hugo/ROM_code/code/
     
 Now, we can run the code by open a terminal in the folder "code" and typing sh run.sh. The output file is a CGNS file containing the ROM solution for a determined number of snapshots (listed in the inputs.inp file). For all candidate models evaluated, the DNN parameters and hyperparameters can be found in the folder "line3/regression//deep_learning/results/". 
 
