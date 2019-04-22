@@ -65,4 +65,4 @@ Once we have the POD temporal and spatial modes, we can reconstruct the flowfiel
     sh compile.sh
     ./reconst.out
     
-The output file is a CGNS file containing the ROM solutions for a determined number of snapshots. In the "reconst_best_model.py" code, we can set the time step and the number of snapshots for reconstruction, hence the reduced order model obtained allows to predict the flowfield beyond the training window and with larger or smaller time increments than those used by the full order model.
+The output file is a CGNS file containing the ROM solutions for a determined number of snapshots. In the "reconst_best_model.py" code, we can set the time step and the number of snapshots for reconstruction, hence the reduced order model obtained allows to predict the flowfield beyond the training window with larger or smaller time increments than those used by the full order model.
