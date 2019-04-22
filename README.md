@@ -18,7 +18,7 @@ Install the required packages and then clone the repository from github.
 
 # Example 1 - Compressible flow past a cylinder
 
-In this example, the full order model (FOM) is obtained by solving the compressible Navier Stokes equations as detailed in (https://arxiv.org/abs/1903.05206: section 4.2). The numerical simulations are conducted for Reynolds and Mach numbers Re = 150 and M = 0.4, respectively. The grid configuration consists of a body-fitted O-grid with 421 × 751 points in the streamwise and wall-normal directions, respectively. The training data comprises the first 280 snapshots of the FOM, and the validation data contains the next 145 snapshots. 
+In this example, the full order model (FOM) is obtained by solving the compressible Navier Stokes equations as detailed in (https://arxiv.org/abs/1903.05206, section 4.2). The numerical simulations are conducted for Reynolds and Mach numbers Re = 150 and M = 0.4, respectively. The grid configuration consists of a body-fitted O-grid with 421 × 751 points in the streamwise and wall-normal directions, respectively. The training data comprises the first 280 snapshots of the FOM, and the validation data contains the next 145 snapshots. 
 
 We are going to build a reduced order model capable to predict the flowfield beyond the training. The final form of the ROM is an ordinary differential equation (ODE) system. 
 
@@ -44,7 +44,7 @@ In the "inputs.inp" file, we can specify the training and validation data, the f
    
 # Example 2 - Deep dynamic stall of plunging airfoil
 
-In this example, we are going to reconstruct a turbulent flow involving dynamic stall of a plunging airfoil. Further details about the FOM can be found in (https://arxiv.org/abs/1903.05206: section 4.2.2. Insteady of training the neural network as in the example 1, it will be given the DNN parameters already trained as well the POD modes computed from the training data (the first two cycles).
+In this example, we are going to reconstruct a turbulent flow involving dynamic stall of a plunging airfoil. Further details about the FOM can be found in https://arxiv.org/abs/1903.05206, section 4.2.2. Insteady of training the neural network as in the example 1, it will be given the DNN parameters already trained as well the POD modes computed from the training data (the first two cycles).
 
 ## 1 - Download the dynamical stall data 
 First, download the dynamical stall data to the directory ".../ROM_code/examples/dynamical_stall/data/"
@@ -56,7 +56,7 @@ In the folder ".../ROM_code/examples/dynamic_stall/", there is a python code cal
 
     python reconst_best_model.py
     
-The output is the matrix of the temporal modes. 
+The output is the temporal modes. 
 
 ## 3 - Reconstruct the flowfield
 
