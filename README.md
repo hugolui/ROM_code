@@ -1,8 +1,6 @@
 # DNN-ROM code (In construction)
 The DNN-ROM code can be used for construction of reduced order models, ROMs, of fluid flows. The code employs a combination of flow modal decomposition and regression analysis. Spectral proper orthogonal decomposition, SPOD, is applied to reduce the dimensionality of the model and, at the same time, filter the POD temporal modes. The regression step is performed by a deep feedforward neural network, DNN, and the current framework is implemented in a context similar to the sparse identification of non-linear dynamics algorithm, SINDy. Test cases such as the compressible flow past a cylinder and the turbulent flow computed by a large eddy simulation of a plunging airfoil under dynamic stall are provided. For more details, see https://arxiv.org/abs/1903.05206. 
 
-![Image description](https://www.dropbox.com/s/chs07s8omd9pc7h/Figure1.pdf?dl=0)
-
 # Required packages 
 Your system will need the following packages to run the code:
 1. GFortran compiler
@@ -46,7 +44,7 @@ In the "inputs.inp" file, we can specify the training and validation data, the f
    
 # Example 2 - Deep dynamic stall of plunging airfoil
 
-
+In this example, we are going to reconstruct a turbulent flow involving dynamic stall of a plunging airfoil. Further details about the FOM can be found in (https://arxiv.org/abs/1903.05206: section 4.2.2. Insteady of training the neural network as in the example 1, it will be given the DNN parameters already trained as well the POD modes computed from the training data (the first two cycles).
 
 ## 1 - Download the dynamical stall data 
 First, download the dynamical stall data to the directory ".../ROM_code/examples/dynamical_stall/data/"
@@ -67,4 +65,4 @@ Once we have the POD temporal and spatial modes, we can reconstruct the flowfiel
     sh compile.sh
     ./reconst.out
     
-The output file is a CGNS file containing the ROM solutions for a determined number of snapshots. In the "reconst_best_model.py" code, we can set the time step and the number of snapshots for reconstruction, hence the code allows to predict the flowfield beyond the training window and with larger or smaller time increments than those used by the full order model.
+The output file is a CGNS file containing the ROM solutions for a determined number of snapshots. In the "reconst_best_model.py" code, we can set the time step and the number of snapshots for reconstruction, hence the reduced order model obtained allows to predict the flowfield beyond the training window and with larger or smaller time increments than those used by the full order model.
