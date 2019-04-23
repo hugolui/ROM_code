@@ -51,7 +51,7 @@ In the "inputs.inp" file, we can specify the:
     fluid region of interest for the construction of the ROM; 
     numerical scheme used to compute the derivative of the temporal modes;
     number of POD modes; 
-    SPOD size and type;
+    SPOD filter size and type;
     norm for the POD correlation matrix; 
     hyperparameters search space;
     hyperparameter optimization strategy; 
