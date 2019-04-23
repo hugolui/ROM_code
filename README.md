@@ -40,6 +40,11 @@ Now, we can run the code by open a terminal in the folder "code" and typing
 
 The output file is a CGNS file containing the ROM solutions for a determined number of snapshots (listed in the inputs.inp file). For all candidate models evaluated, the DNN parameters and hyperparameters can be found in the folder ".../regression/deep_learning/results/". 
 
+Videos comparing the FOM and ROM solutions:
+    
+    https://www.youtube.com/watch?v=52n4CP-01a8
+    https://www.youtube.com/watch?v=e8vASdxMUg8
+    
 In the "inputs.inp" file, we can specify the training and validation data, the fluid region of interest for the construction of the ROM, the numerical scheme used to compute the derivative of the temporal modes, the number of POD modes, the SPOD size and type, the norm for the POD correlation matrix, the hyperparameters search space, the hyperparameter optimization strategy, the number of candidate models to be evaluated and the number of snapshots for reconstruction of the flowfield. So, there are many parameters to play with here to improve the accuracy of the reduced order model.
    
 # Example 2 - Deep dynamic stall of plunging airfoil
@@ -52,7 +57,7 @@ First, download the dynamical stall data to the directory ".../ROM_code/examples
     https://www.dropbox.com/sh/6qjz6eyexp1m5yu/AABo4A0_btk-ciKDS2DRsoiTa?dl=0
     
 ## 2 - Predict the POD temporal modes
-In the folder ".../ROM_code/examples/dynamic_stall/", there is a python code called "reconst_best_model.py" which reconstruct the temporal modes. As we have the DNN parameters and the initial conditions, we can solve the system of coupled ODEs that describe the dynamics of the temporal modes by runnning the python code
+In the folder ".../ROM_code/examples/dynamic_stall/", there is a python code called "reconst_best_model.py" that reconstruct the temporal modes. As we have the DNN parameters and the initial conditions, we can solve the system of coupled ODEs that describe the dynamics of the temporal modes by runnning the python code
 
     python reconst_best_model.py
     
@@ -66,3 +71,10 @@ Once we have the POD temporal and spatial modes, we can reconstruct the flowfiel
     ./reconst.out
     
 The output file is a CGNS file containing the ROM solutions for a determined number of snapshots. In the "reconst_best_model.py" code, we can set the time step and the number of snapshots for reconstruction, hence the reduced order model obtained allows to predict the flowfield beyond the training window with larger or smaller time increments than those used by the full order model.
+
+Videos comparing the FOM and ROM solutions:
+    
+    https://www.youtube.com/watch?v=LWS98UX-YqA
+    https://www.youtube.com/watch?v=sxgaJTJYCls
+    https://www.youtube.com/watch?v=eE3Lem1EX8w (3D case, not provided in this example)
+
