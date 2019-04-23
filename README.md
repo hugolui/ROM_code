@@ -46,6 +46,21 @@ https://www.youtube.com/watch?v=52n4CP-01a8<br/>
 https://www.youtube.com/watch?v=e8vASdxMUg8
     
 In the "inputs.inp" file, we can specify the training and validation data, the fluid region of interest for the construction of the ROM, the numerical scheme used to compute the derivative of the temporal modes, the number of POD modes, the SPOD size and type, the norm for the POD correlation matrix, the hyperparameters search space, the hyperparameter optimization strategy, the number of candidate models to be evaluated and the number of snapshots for reconstruction of the flowfield. So, there are many parameters to play with here to improve the accuracy of the reduced order model.
+
+In the "inputs.inp" file, we can specify the:
+
+    training and validation data;
+    fluid region of interest for the construction of the ROM; 
+    numerical scheme used to compute the derivative of the temporal modes;
+    number of POD modes; 
+    SPOD size and type;
+    norm for the POD correlation matrix; 
+    hyperparameters search space;
+    hyperparameter optimization strategy; 
+    number of candidate models to be evaluated;
+    number of snapshots for reconstruction of the flowfield. 
+ 
+ So, there are many parameters to play with here to improve the accuracy of the reduced order model.
    
 # Example 2 - Deep dynamic stall of plunging airfoil
 
