@@ -74,7 +74,7 @@ The output file is a CGNS file containing the ROM solutions for a determined num
 
 Videos comparing the FOM and ROM solutions:
     
-https://www.youtube.com/watch?v=LWS98UX-YqA
-https://www.youtube.com/watch?v=sxgaJTJYCls
+https://www.youtube.com/watch?v=LWS98UX-YqA<br/>
+https://www.youtube.com/watch?v=sxgaJTJYCls<br/>
 https://www.youtube.com/watch?v=eE3Lem1EX8w (3D case, not provided in this example)
 
