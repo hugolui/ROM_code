@@ -54,7 +54,7 @@ In this example, we are going to reconstruct a turbulent flow involving dynamic 
 ## 1 - Download the dynamical stall data 
 First, download the dynamical stall data to the directory ".../ROM_code/examples/dynamical_stall/data/"
 
-    https://www.dropbox.com/sh/6qjz6eyexp1m5yu/AABo4A0_btk-ciKDS2DRsoiTa?dl=0
+    (https://www.dropbox.com/sh/6qjz6eyexp1m5yu/AABo4A0_btk-ciKDS2DRsoiTa?dl=0)
     
 ## 2 - Predict the POD temporal modes
 In the folder ".../ROM_code/examples/dynamic_stall/", there is a python code called "reconst_best_model.py" that reconstruct the temporal modes. As we have the DNN parameters and the initial conditions, we can solve the system of coupled ODEs that describe the dynamics of the temporal modes by runnning the python code
