@@ -66,7 +66,7 @@ In the "inputs.inp" file, we can specify the:
    
 # Example 2 - Deep dynamic stall of plunging airfoil
 
-In this example, we are going to reconstruct a turbulent flow involving dynamic stall of a plunging airfoil. Further details about the FOM can be found in https://arxiv.org/abs/1903.05206, section 4.2.2. Insteady of training the neural network as in the example 1, it will be given the DNN parameters already trained as well the POD modes computed from the training data (the first two cycles).
+In this example, we are going to reconstruct a turbulent flow involving dynamic stall of a plunging airfoil. Further details about the FOM can be found in [section 4.2.2](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/construction-of-reducedorder-models-for-fluid-flows-using-deep-feedforward-neural-networks/ECEC52E32AEBBEA049CF26D6C79EE394). Insteady of training the neural network as in the example 1, it will be given the DNN parameters already trained as well the POD modes computed from the training data (the first two cycles).
 
 ## 1 - Download the dynamical stall data 
 First, download the dynamical stall data to the directory ".../ROM_code/examples/dynamical_stall/data/"
@@ -76,7 +76,7 @@ https://www.dropbox.com/sh/6qjz6eyexp1m5yu/AABo4A0_btk-ciKDS2DRsoiTa?dl=0
 ## 2 - Predict the POD temporal modes
 In the folder ".../ROM_code/examples/dynamic_stall/", there is a python code called "reconst_best_model.py" that reconstruct the temporal modes. As we have the DNN parameters and the initial conditions, we can solve the system of coupled ODEs that describe the dynamics of the temporal modes by runnning the python code
 
-    python reconst_best_model.py
+    python3 reconst_best_model.py
     
 The output is the POD temporal modes. 
 
