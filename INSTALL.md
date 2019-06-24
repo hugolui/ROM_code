@@ -1,9 +1,9 @@
-## Installing the required packages 
+# Installing the required packages 
 
-# Installing GFortran 
+## Installing GFortran 
 	$ sudo apt-get install gfortran
 
-# Installing numpy
+## Installing numpy
 	$ pip install numpy
 
 # Installing matplotlib
