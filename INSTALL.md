@@ -6,22 +6,22 @@
 ## Installing numpy
 	$ pip install numpy
 
-# Installing matplotlib
+## Installing matplotlib
 	$ pip install matplotlib
 
-# Installing scipy
+## Installing scipy
 	$ pip install scipy
 
-# Installing scikit-Optimize
+## Installing scikit-Optimize
 	$ pip install scikit-optimize
 
-# Installing Surrogate Modeling Toolbox
+## Installing Surrogate Modeling Toolbox
 
 	- Clone the repository from github (https://github.com/SMTorg/SMT) then run:
 
 	$ pip install -e <smt_folder>
 
-# Installing Tensorflow GPU support
+## Installing Tensorflow GPU support
 
 	(a) Update your GPU driver if your version is below 410.x (CUDA 10.0 requires 410.x or higher)
 	(b) Install the CUDA toolkit 10.0
@@ -53,7 +53,7 @@
 	(d) Install tensorflow
 		$ pip install tensorflow-gpu
 		
-# Installing CGNS
+## Installing CGNS
 
 	1. Install HDF5 on your system (https://www.hdfgroup.org/downloads/hdf5/source-code/)
 		(a) Open a terminal in the HDF5 directory and run the following commands:
