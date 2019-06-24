@@ -90,8 +90,9 @@
 		--enable-debug \
 		--disable-cgnstools \
 
-	(c) run sh config-cgns.sh 
-	
+	(c) run the config-cgns.sh file
+		$ sh config-cgns.sh 	
+			
 	(d) Build the CGNS libray using 
 		$ cd src/
 		$ make
