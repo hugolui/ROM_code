@@ -10,12 +10,12 @@ sh compile.sh &&
 ./calc_derivative.out &&
 cd .. &&
 cd deep_learning/ &&
-python DNN_regression.py &&
-python MAE.py &&
+python3 DNN_regression.py &&
+python3 MAE.py &&
 cd .. &&
 cd .. &&
 cd reconst &&
-python reconst_best_model.py 
+python3 reconst_best_model.py 
 
 
 

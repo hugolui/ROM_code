@@ -771,7 +771,7 @@ subroutine Spatial_Modes_POD
   
   if (svdFlag) then
     write(*,*) achar(10) // '  Computing SVD ...'
-    call system('python SVD.py')
+    call system('python3 SVD.py')
   endif
 
   allocate(pod_zone(1:nzones))
