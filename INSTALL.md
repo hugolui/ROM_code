@@ -1,5 +1,16 @@
 # Installing the required packages 
 
+Before installing DNN-ROM you'll need to install the following packages
+1. GFortran compiler
+2. Python 3.6, including these modules
+    - Numpy
+    - Matplotlib
+    - Scipy
+    - Scikit-optimize
+    - Surrogate modeling toolbox (SMT) 
+3. Tensorflow (GPU or CPU support)
+4. CGNS 
+
 ## Installing GFortran 
 	$ sudo apt-get install gfortran
 
