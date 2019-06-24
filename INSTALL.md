@@ -1,3 +1,5 @@
+## Installing the required packages 
+
 # Installing GFortran 
 	$ sudo apt-get install gfortran
 
