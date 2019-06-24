@@ -1,23 +1,23 @@
 # Installing GFortran 
-$ sudo apt-get install gfortran
+	$ sudo apt-get install gfortran
 
 # Installing numpy
-$ pip install numpy
+	$ pip install numpy
 
 # Installing matplotlib
-$ pip install matplotlib
+	$ pip install matplotlib
 
 # Installing scipy
-$ pip install scipy
+	$ pip install scipy
 
 # Installing scikit-Optimize
-$ pip install scikit-optimize
+	$ pip install scikit-optimize
 
 # Installing Surrogate Modeling Toolbox
 
-- Clone the repository from github (https://github.com/SMTorg/SMT) then run:
+	- Clone the repository from github (https://github.com/SMTorg/SMT) then run:
 
-$ pip install -e <smt_folder>
+	$ pip install -e <smt_folder>
 
 # Installing Tensorflow GPU support
 
@@ -53,14 +53,14 @@ $ pip install -e <smt_folder>
 		
 # Installing CGNS
 
-1. Install HDF5 on your system (https://www.hdfgroup.org/downloads/hdf5/source-code/)
-	(a) Open a terminal in the HDF5 directory and run the following commands:
-	$ ./configure
-	$ make
-	$ sudo make install
+	1. Install HDF5 on your system (https://www.hdfgroup.org/downloads/hdf5/source-code/)
+		(a) Open a terminal in the HDF5 directory and run the following commands:
+		$ ./configure
+		$ make
+		$ sudo make install
 
-2. Clone the repository from github (https://github.com/CGNS/CGNS) and then go to the CGNS directory
-	(a) In the bin (../CGNS/bin) folder, there is a file called "config-cgns.sh". Copy this file to the ../CGNS directory 
+	2. Clone the repository from github (https://github.com/CGNS/CGNS) and then go to the CGNS directory
+		(a) In the bin (../CGNS/bin) folder, there is a file called "config-cgns.sh". Copy this file to the ../CGNS directory 
 		$ cp bin/config-cgns.sh .
 
 	(b) Modify the config-cgns.sh to the following form:
