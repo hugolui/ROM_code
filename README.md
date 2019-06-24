@@ -3,7 +3,7 @@ The DNN-ROM code can be used for construction of reduced-order models, ROMs, of 
 
 For more details, see
 
-Lui, H., & Wolf, W. (2019).[Construction of reduced-order models for fluid flows using deep feedforward neural networks](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/construction-of-reducedorder-models-for-fluid-flows-using-deep-feedforward-neural-networks/ECEC52E32AEBBEA049CF26D6C79EE394). Journal of Fluid Mechanics, 872, 963-994. doi:10.1017/jfm.2019.358                                                               
+Lui, H., & Wolf, W. (2019). [Construction of reduced-order models for fluid flows using deep feedforward neural networks](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/construction-of-reducedorder-models-for-fluid-flows-using-deep-feedforward-neural-networks/ECEC52E32AEBBEA049CF26D6C79EE394). Journal of Fluid Mechanics, 872, 963-994. doi:10.1017/jfm.2019.358                                                               
 
 # Required packages 
 Your system will need the following packages to run the code:
@@ -22,7 +22,7 @@ See INSTALL.md
 
 # Example 1 - Compressible flow past a cylinder
 
-In this example, the full order model (FOM) is obtained by solving the compressible Navier Stokes equations as detailed in (Lui, H., & Wolf, W. (2019), section 4.2). The numerical simulations are conducted for Reynolds and Mach numbers Re = 150 and M = 0.4, respectively. The grid configuration consists of a body-fitted O-grid with 421 × 751 points in the streamwise and wall-normal directions, respectively. The training data comprises the first 280 snapshots of the FOM, and the validation data contains the next 145 snapshots. 
+In this example, the full order model (FOM) is obtained by solving the compressible Navier Stokes equations as detailed in [section 4.2](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/construction-of-reducedorder-models-for-fluid-flows-using-deep-feedforward-neural-networks/ECEC52E32AEBBEA049CF26D6C79EE394). The numerical simulations are conducted for Reynolds and Mach numbers Re = 150 and M = 0.4, respectively. The grid configuration consists of a body-fitted O-grid with 421 × 751 points in the streamwise and wall-normal directions, respectively. The training data comprises the first 280 snapshots of the FOM, and the validation data contains the next 145 snapshots. 
 
 We are going to build a reduced order model capable to predict the flowfield beyond the training. The final form of the ROM is an ordinary differential equation (ODE) system. 
 
