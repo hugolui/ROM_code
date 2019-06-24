@@ -1,5 +1,9 @@
 # DNN-ROM code 
-The DNN-ROM code can be used for construction of reduced-order models, ROMs, of fluid flows. The code employs a combination of flow modal decomposition and regression analysis. Spectral proper orthogonal decomposition, SPOD, is applied to reduce the dimensionality of the model and, at the same time, filter the POD temporal modes. The regression step is performed by a deep feedforward neural network, DNN, in order to obtain a system of ordinary differential equations (ODEs) which represents the dynamics of POD temporal modes. The current framework is implemented in a context similar to the sparse identification of non-linear dynamics algorithm, SINDy. Test cases such as the compressible flow past a cylinder and the turbulent flow computed by a large eddy simulation of a plunging airfoil under dynamic stall are provided. For more details, see https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/construction-of-reducedorder-models-for-fluid-flows-using-deep-feedforward-neural-networks/ECEC52E32AEBBEA049CF26D6C79EE394. 
+The DNN-ROM code can be used for construction of reduced-order models, ROMs, of fluid flows. The code employs a combination of flow modal decomposition and regression analysis. Spectral proper orthogonal decomposition, SPOD, is applied to reduce the dimensionality of the model and, at the same time, filter the POD temporal modes. The regression step is performed by a deep feedforward neural network, DNN, in order to obtain a system of ordinary differential equations (ODEs) which represents the dynamics of POD temporal modes. The current framework is implemented in a context similar to the sparse identification of non-linear dynamics algorithm, SINDy. Test cases such as the compressible flow past a cylinder and the turbulent flow computed by a large eddy simulation of a plunging airfoil under dynamic stall are provided. 
+
+For more details, see
+
+Lui, H., & Wolf, W. (2019).[Construction of reduced-order models for fluid flows using deep feedforward neural networks](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/construction-of-reducedorder-models-for-fluid-flows-using-deep-feedforward-neural-networks/ECEC52E32AEBBEA049CF26D6C79EE394). Journal of Fluid Mechanics, 872, 963-994. doi:10.1017/jfm.2019.358                                                               
 
 # Required packages 
 Your system will need the following packages to run the code:
@@ -18,7 +22,7 @@ See INSTALL.md
 
 # Example 1 - Compressible flow past a cylinder
 
-In this example, the full order model (FOM) is obtained by solving the compressible Navier Stokes equations as detailed in (https://arxiv.org/abs/1903.05206, section 4.2). The numerical simulations are conducted for Reynolds and Mach numbers Re = 150 and M = 0.4, respectively. The grid configuration consists of a body-fitted O-grid with 421 × 751 points in the streamwise and wall-normal directions, respectively. The training data comprises the first 280 snapshots of the FOM, and the validation data contains the next 145 snapshots. 
+In this example, the full order model (FOM) is obtained by solving the compressible Navier Stokes equations as detailed in (Lui, H., & Wolf, W. (2019), section 4.2). The numerical simulations are conducted for Reynolds and Mach numbers Re = 150 and M = 0.4, respectively. The grid configuration consists of a body-fitted O-grid with 421 × 751 points in the streamwise and wall-normal directions, respectively. The training data comprises the first 280 snapshots of the FOM, and the validation data contains the next 145 snapshots. 
 
 We are going to build a reduced order model capable to predict the flowfield beyond the training. The final form of the ROM is an ordinary differential equation (ODE) system. 
 
