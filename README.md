@@ -14,7 +14,7 @@ Your system will need the following packages to run the code:
 4. CGNS 
 
 # Installation 
-Install the required packages and then clone the repository from github.
+See INSTALL.md 
 
 # Example 1 - Compressible flow past a cylinder
 
