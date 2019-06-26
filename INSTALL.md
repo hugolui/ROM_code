@@ -15,22 +15,22 @@ Before installing DNN-ROM you'll need to install the following packages
 	$ sudo apt-get install gfortran
 
 ## Installing numpy
-	$ pip install numpy
+	$ pip3 install numpy
 
 ## Installing matplotlib
-	$ pip install matplotlib
+	$ pip3 install matplotlib
 
 ## Installing scipy
-	$ pip install scipy
+	$ pip3 install scipy
 
 ## Installing scikit-Optimize
-	$ pip install scikit-optimize
+	$ pip3 install scikit-optimize
 
 ## Installing Surrogate Modeling Toolbox
 
 	- Clone the repository from github (https://github.com/SMTorg/SMT) then run:
 
-	$ pip install -e <smt_folder>
+	$ pip3 install -e <smt_folder>
 
 ## Installing Tensorflow GPU support
 
@@ -62,7 +62,7 @@ Before installing DNN-ROM you'll need to install the following packages
 			export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
 
 	(d) Install tensorflow
-		$ pip install tensorflow-gpu
+		$ pip3 install tensorflow-gpu
 		
 ## Installing CGNS
 
