@@ -31,6 +31,8 @@ First, download the cylinder data:
 
 https://www.dropbox.com/sh/ji6i5u8valqyda8/AABtEYaZ7vG-62q6h4toQKBTa?dl=0
 
+hdf5 format: https://drive.google.com/file/d/1cqxzDNG6ic1HqC7vmjq_bBmGFB9qYihp/view?usp=sharing
+
 ## 2 - Define the parameters in the inputs.inp file
 In the folder "code", we have a file called "inputs.inp". In this file, we specify the information required to construct the reduced order model. There are comments explaining the inputs list. In order to run this example, we just need to modify lines 1 and 3.
 
@@ -72,7 +74,9 @@ In this example, we are going to reconstruct a turbulent flow involving dynamic 
 First, download the dynamical stall data to the directory ".../ROM_code/examples/dynamical_stall/data/"
 
 https://www.dropbox.com/sh/6qjz6eyexp1m5yu/AABo4A0_btk-ciKDS2DRsoiTa?dl=0
-    
+
+Snapshots (hdf5 format): https://drive.google.com/file/d/15EULfS6RpuVIof_cxxda_R4tr5Z60MXs/view?usp=sharing
+
 ## 2 - Predict the POD temporal modes
 In the folder ".../ROM_code/examples/dynamic_stall/", there is a python code called "reconst_best_model.py" that reconstruct the temporal modes. As we have the DNN parameters and the initial conditions, we can solve the system of coupled ODEs that describe the dynamics of the temporal modes by runnning the python code
 
