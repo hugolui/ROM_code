@@ -64,10 +64,10 @@ Before installing DNN-ROM you'll need to install the following packages
 	(d) Install tensorflow
 		$ pip3 install tensorflow-gpu
 		
-## Installing CGNS
+## Installing CGNS (Works only on CGNS version 3.4.0)
 
-	1. Clone the repository from github (https://github.com/CGNS/CGNS) and then go to the CGNS directory
-		(a) In the bin (../CGNS/bin) folder, there is a file called "config-cgns.sh". Copy this file to the ../CGNS directory 
+	1. Download the source code from github (https://github.com/CGNS/CGNS/releases/tag/v3.4.0) and then go to the CGNS directory
+ 		(a) In the bin (../CGNS-3.4.0/bin) folder, there is a file called "config-cgns.sh". Copy this file to the ../CGNS-3.4.0 directory 
 		$ cp bin/config-cgns.sh .
 
 	(b) Modify the config-cgns.sh to the following form:
